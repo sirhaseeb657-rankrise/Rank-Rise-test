@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+  <!-- Core Pages -->
+  <url>
+    <loc>https://rankriseagency.com/</loc>
+    <lastmod>2026-09-02T21:30:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.00</priority>
+  </url>
+  <url>
+    <loc>https://rankriseagency.com/about.html</loc>
+    <lastmod>2026-09-02T21:30:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://rankriseagency.com/services.html</loc>
+    <lastmod>2026-09-02T21:30:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
+  <!-- Service Deep Dives -->
+  <url>
+    <loc>https://rankriseagency.com/guest-posting.html</loc>
+    <lastmod>2026-09-02T21:30:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://rankriseagency.com/link-building.html</loc>
+    <lastmod>2026-09-02T21:30:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://rankriseagency.com/seo-services.html</loc>
+    <lastmod>2026-09-02T21:30:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://rankriseagency.com/digital-marketing.html</loc>
+    <lastmod>2026-09-02T21:30:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+
+  <!-- Tools & Guidelines -->
+  <url>
+    <loc>https://rankriseagency.com/free-seo-audit.html</loc>
+    <lastmod>2026-09-02T21:30:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://rankriseagency.com/guest-post-guidelines.html</loc>
+    <lastmod>2026-09-02T21:30:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://rankriseagency.com/pricing.html</loc>
+    <lastmod>2026-09-02T21:30:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://rankriseagency.com/contact.html</loc>
+    <lastmod>2026-09-02T21:30:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://rankriseagency.com/faq.html</loc>
+    <lastmod>2026-09-02T21:30:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Blog & Strategy -->
+  <url>
+    <loc>https://rankriseagency.com/blog.html</loc>
+    <lastmod>2026-09-02T21:30:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://rankriseagency.com/blog-post.html</loc>
+    <lastmod>2026-09-02T21:30:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://rankriseagency.com/blog-strategy.html</loc>
+    <lastmod>2026-09-02T21:30:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Legal -->
+  <url>
+    <loc>https://rankriseagency.com/privacy-policy.html</loc>
+    <lastmod>2026-09-02T21:30:00+00:00</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.30</priority>
+  </url>
+  <url>
+    <loc>https://rankriseagency.com/terms.html</loc>
+    <lastmod>2026-09-02T21:30:00+00:00</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.30</priority>
+  </url>
+</urlset>

@@ -1,0 +1,8 @@
+# Robots.txt for RankRise Digital Agency
+# https://rankriseagency.com/
+
+User-agent: *
+Allow: /
+
+# Sitemap Location
+Sitemap: https://rankriseagency.com/sitemap.xml

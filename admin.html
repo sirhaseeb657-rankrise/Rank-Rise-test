@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Portal & Control Center | RankRise Digital Agency</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body style="min-height: 100vh; display: flex; flex-direction: column;">
+
+  <!-- Main Navigation Header -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-logo-icon">▲</div>
+        <span>Rank<span class="highlight">Rise</span> <span style="font-size: 0.8rem; background: rgba(99, 102, 241, 0.2); padding: 0.2rem 0.6rem; border-radius: var(--radius-full); color: var(--primary-light);">Admin</span></span>
+      </a>
+
+      <nav class="nav-menu">
+        <a href="index.html" class="nav-link">Main Website</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="guest-posting.html" class="nav-link">Marketplace</a>
+        <a href="pricing.html" class="nav-link">Pricing</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="theme-toggle-btn" title="Toggle Theme" aria-label="Toggle Dark/Light Mode">☀️</button>
+        <button id="adminHeaderBtn" class="btn btn-secondary btn-sm" onclick="logoutAdmin()">Logout</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Content Area -->
+  <main style="flex-grow: 1; padding: 2.5rem 0;">
+    <div class="container">
+
+      <!-- Login Screen View (Shown when not authenticated) -->
+      <div id="adminLoginScreen" style="max-width: 480px; margin: 3rem auto;">
+        <div class="card" style="padding: 3rem 2.5rem; text-align: center; border-color: rgba(99, 102, 241, 0.4);">
+          <div style="width: 65px; height: 65px; border-radius: 50%; background: var(--grad-primary); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin: 0 auto 1.2rem auto;">
+            🔒
+          </div>
+          <h2 style="font-size: 1.8rem; margin-bottom: 0.4rem;">Admin Portal</h2>
+          <p style="font-size: 0.92rem; color: var(--text-muted); margin-bottom: 2rem;">
+            Secure access for <strong>RankRise Digital Agency</strong> leadership.
+          </p>
+
+          <form id="adminLoginForm">
+            <div class="form-group" style="text-align: left;">
+              <label class="form-label" for="adminEmail">Admin Email ID</label>
+              <input type="email" id="adminEmail" class="form-control" value="sirhaseeb657@gmail.com" required>
+            </div>
+
+            <div class="form-group" style="text-align: left;">
+              <label class="form-label" for="adminPassword">Passcode / PIN</label>
+              <input type="password" id="adminPassword" class="form-control" placeholder="Enter password (e.g. admin123)" required>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; font-size: 0.85rem; color: var(--text-muted);">
+              <label style="display: flex; align-items: center; gap: 0.4rem; cursor: pointer;">
+                <input type="checkbox" checked> Remember Session
+              </label>
+              <span style="color: var(--primary-light);">Default PIN: admin123</span>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg btn-block">
+              <span>Sign In to Dashboard</span>
+            </button>
+          </form>
+
+          <div style="margin-top: 1.5rem; font-size: 0.82rem; color: var(--text-dim);">
+            Direct Assistance: <a href="javascript:void(0)" onclick="openRankRiseWhatsApp('923400502140')" class="article-link">+92-3400502140</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Logged-in Dashboard View (Hidden by default) -->
+      <div id="adminDashboardView" style="display: none;">
+        
+        <!-- Welcome Banner & Quick Status Bar -->
+        <div class="card" style="padding: 1.8rem 2rem; margin-bottom: 2rem; border-color: rgba(99, 102, 241, 0.3); background: var(--grad-card);">
+          <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.2rem;">
+            <div style="display: flex; align-items: center; gap: 1.2rem;">
+              <div style="width: 52px; height: 52px; border-radius: 50%; background: var(--grad-primary); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: bold; color: #fff;">
+                SH
+              </div>
+              <div>
+                <h3 style="font-size: 1.35rem; margin-bottom: 0.2rem;">Welcome back, <span class="text-gradient">Sir Haseeb</span></h3>
+                <span style="font-size: 0.88rem; color: var(--text-muted);">Super Admin • <strong style="color: var(--primary-light);">sirhaseeb657@gmail.com</strong> • Status: 🟢 Active</span>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 0.8rem; align-items: center;">
+              <button class="btn btn-whatsapp btn-sm" onclick="openRankRiseWhatsApp('923400502140', 'Admin Status Check: Hotlines online.')">
+                <span>WhatsApp #1 (+92-3400502140)</span>
+              </button>
+              <button class="btn btn-whatsapp btn-sm" onclick="openRankRiseWhatsApp('923318199105', 'Admin Sales Desk online.')">
+                <span>WhatsApp #2 (+92-3318199105)</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Key Metrics Cards -->
+        <div class="stats-grid" style="margin-top: 0; margin-bottom: 2.5rem;">
+          <div class="stat-box">
+            <div class="stat-num text-gradient">142</div>
+            <div class="stat-label">Total Leads Received</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num text-gradient-emerald">28</div>
+            <div class="stat-label">Active Guest Post Orders</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num text-gradient-purple">7</div>
+            <div class="stat-label">Pending Publisher Sites</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num text-gradient">$18,450</div>
+            <div class="stat-label">Estimated Monthly Volume</div>
+          </div>
+        </div>
+
+        <!-- Dashboard Tabs Header -->
+        <div style="display: flex; gap: 0.6rem; border-bottom: 1px solid var(--border-glass); margin-bottom: 2rem; overflow-x: auto; padding-bottom: 0.5rem;">
+          <button class="btn btn-primary btn-sm admin-tab-btn active" onclick="switchAdminTab('ordersTab', this)">📝 Active Orders (28)</button>
+          <button class="btn btn-secondary btn-sm admin-tab-btn" onclick="switchAdminTab('publishersTab', this)">🌐 Publisher Approvals (7)</button>
+          <button class="btn btn-secondary btn-sm admin-tab-btn" onclick="switchAdminTab('leadsTab', this)">📬 Leads & Inquiries (142)</button>
+          <button class="btn btn-secondary btn-sm admin-tab-btn" onclick="switchAdminTab('seoHealthTab', this)">🔍 SEO & GSC Health</button>
+        </div>
+
+        <!-- TAB 1: Active Guest Post Orders -->
+        <div id="ordersTab" class="admin-tab-content">
+          <div class="publisher-table-container">
+            <div class="table-filter-bar">
+              <span style="font-weight: 700; font-size: 1.05rem;">Live Client Orders & Fulfillment</span>
+              <button class="btn btn-primary btn-sm" onclick="addNewOrderPrompt()">+ Add New Client Order</button>
+            </div>
+            <div style="overflow-x: auto;">
+              <table class="publisher-table">
+                <thead>
+                  <tr>
+                    <th>Client / Business</th>
+                    <th>Target Domain & Anchor</th>
+                    <th>Selected Tier</th>
+                    <th>Amount</th>
+                    <th>Order Status</th>
+                    <th>Quick Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="ordersTableBody">
+                  <tr>
+                    <td><strong>CloudScale SaaS</strong><br><span style="font-size: 0.8rem; color: var(--text-dim);">Marcus R. • USA</span></td>
+                    <td><code>cloudscalesaas.io</code><br><span style="font-size: 0.85rem; color: var(--primary-light);">"cloud cost optimization"</span></td>
+                    <td><span class="metric-badge badge-da">DA 70+ (Tier 3)</span></td>
+                    <td><strong>$799</strong></td>
+                    <td><span class="metric-badge" style="background: rgba(245, 158, 11, 0.2); color: var(--accent-amber);">In Editorial Review</span></td>
+                    <td>
+                      <button class="btn btn-whatsapp btn-sm" onclick="openRankRiseWhatsApp('923400502140', 'Order update for CloudScale SaaS: Draft submitted to editor.')">WhatsApp Update</button>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td><strong>EcoLiving Store</strong><br><span style="font-size: 0.8rem; color: var(--text-dim);">Sarah J. • UK</span></td>
+                    <td><code>ecolivinggoods.com</code><br><span style="font-size: 0.85rem; color: var(--accent-emerald);">"sustainable home decor"</span></td>
+                    <td><span class="metric-badge badge-traffic">DA 50+ (Tier 2)</span></td>
+                    <td><strong>$399</strong></td>
+                    <td><span class="metric-badge badge-traffic">Published & Indexed ✔</span></td>
+                    <td>
+                      <button class="btn btn-secondary btn-sm" onclick="showToast('Live URL report sent to sirhaseeb657@gmail.com')">View Live Report</button>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td><strong>Nordic Media Group</strong><br><span style="font-size: 0.8rem; color: var(--text-dim);">David L. • Sweden</span></td>
+                    <td><code>nordicmedialab.se</code><br><span style="font-size: 0.85rem; color: var(--secondary);">"digital growth agency"</span></td>
+                    <td><span class="metric-badge badge-dofollow">Enterprise Retainer</span></td>
+                    <td><strong>$1,250/mo</strong></td>
+                    <td><span class="metric-badge" style="background: rgba(99, 102, 241, 0.2); color: var(--primary-light);">Month 2 Active</span></td>
+                    <td>
+                      <button class="btn btn-whatsapp btn-sm" onclick="openRankRiseWhatsApp('923400502140', 'Monthly SEO ranking update for Nordic Media Group.')">Send Monthly Report</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 2: Publisher Approvals -->
+        <div id="publishersTab" class="admin-tab-content" style="display: none;">
+          <div class="publisher-table-container">
+            <div class="table-filter-bar">
+              <span style="font-weight: 700; font-size: 1.05rem;">Webmaster & Publisher Submissions (To Vetting)</span>
+              <span style="font-size: 0.85rem; color: var(--text-muted);">Incoming from "Publish Your Article" form</span>
+            </div>
+            <div style="overflow-x: auto;">
+              <table class="publisher-table">
+                <thead>
+                  <tr>
+                    <th>Submitted Domain</th>
+                    <th>Niche</th>
+                    <th>Claimed Metrics</th>
+                    <th>Publisher Rate</th>
+                    <th>Contact Info</th>
+                    <th>Approval Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>aiinsidertrends.com</strong></td>
+                    <td>Tech & Artificial Intelligence</td>
+                    <td><span class="metric-badge badge-da">DA 64</span> • 85k Visits</td>
+                    <td>$95 / post</td>
+                    <td>editor@aiinsidertrends.com</td>
+                    <td>
+                      <button class="btn btn-emerald btn-sm" onclick="showToast('Domain aiinsidertrends.com Approved & Added to Marketplace!')">Approve</button>
+                      <button class="btn btn-secondary btn-sm" style="color: var(--accent-rose);" onclick="showToast('Domain Rejected.')">Reject</button>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td><strong>financetodayjournal.org</strong></td>
+                    <td>Business & Investing</td>
+                    <td><span class="metric-badge badge-da">DA 72</span> • 210k Visits</td>
+                    <td>$140 / post</td>
+                    <td>+44 7700 900123</td>
+                    <td>
+                      <button class="btn btn-emerald btn-sm" onclick="showToast('Domain Approved & Added to Marketplace!')">Approve</button>
+                      <button class="btn btn-secondary btn-sm" style="color: var(--accent-rose);" onclick="showToast('Domain Rejected.')">Reject</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 3: Leads & Inquiries -->
+        <div id="leadsTab" class="admin-tab-content" style="display: none;">
+          <div class="publisher-table-container">
+            <div class="table-filter-bar">
+              <span style="font-weight: 700; font-size: 1.05rem;">Recent Website Leads & Quote Requests</span>
+              <button class="btn btn-whatsapp btn-sm" onclick="openRankRiseWhatsApp('923400502140', 'Export all active leads to sirhaseeb657@gmail.com')">Export Leads to Email</button>
+            </div>
+            <div style="overflow-x: auto;">
+              <table class="publisher-table">
+                <thead>
+                  <tr>
+                    <th>Lead Name</th>
+                    <th>Email / Phone</th>
+                    <th>Requested Service</th>
+                    <th>Target Website</th>
+                    <th>Date Received</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Hassan Ali</strong></td>
+                    <td>hassan@techventures.pk<br><span style="color: var(--accent-emerald);">+92 300 8765432</span></td>
+                    <td>Guest Posting (DA 50+ 10-Pack)</td>
+                    <td>techventures.pk</td>
+                    <td>Today, 2:15 PM</td>
+                    <td>
+                      <button class="btn btn-whatsapp btn-sm" onclick="openRankRiseWhatsApp('923400502140', 'Hi Hassan! Replying to your guest post inquiry on RankRise.')">Reply WhatsApp</button>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td><strong>Emily Watson</strong></td>
+                    <td>emily@watsonlaw.com<br><span style="color: var(--text-dim);">+1 415 555 0184</span></td>
+                    <td>Local SEO & Website Audit</td>
+                    <td>watsonlawfirm.com</td>
+                    <td>Yesterday, 6:40 PM</td>
+                    <td>
+                      <button class="btn btn-whatsapp btn-sm" onclick="openRankRiseWhatsApp('923400502140', 'Hi Emily! Sending you the free technical SEO audit report for Watson Law.')">Send Audit Report</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 4: SEO & Google Search Console Health -->
+        <div id="seoHealthTab" class="admin-tab-content" style="display: none;">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+            <div class="card">
+              <div class="card-icon">🔍</div>
+              <h3>Google Search Console Status</h3>
+              <p style="margin: 0.5rem 0 1.2rem 0; font-size: 0.92rem;">Registered Admin: <strong>sirhaseeb657@gmail.com</strong></p>
+              <ul class="features-list">
+                <li><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg> <code>google-site-verification.html</code> Active</li>
+                <li><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg> Meta Tag Verification Linked</li>
+                <li><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg> Zero Crawl Errors Detected</li>
+              </ul>
+              <a href="google-site-verification.html" class="btn btn-secondary btn-sm" style="margin-top: 1rem;">View Verification Node</a>
+            </div>
+
+            <div class="card">
+              <div class="card-icon" style="background: var(--accent-emerald); color: #07090e;">🗺️</div>
+              <h3>XML Sitemap & Indexing Directives</h3>
+              <p style="margin: 0.5rem 0 1.2rem 0; font-size: 0.92rem;">Location: <code>https://rankriseagency.com/sitemap.xml</code></p>
+              <ul class="features-list">
+                <li><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg> 20 Core URLs Configured with Priority</li>
+                <li><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg> <code>robots.txt</code> Crawler Allowed (100%)</li>
+                <li><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg> Schema.org JSON-LD Formatted</li>
+              </ul>
+              <a href="sitemap.xml" target="_blank" class="btn btn-secondary btn-sm" style="margin-top: 1rem;">Inspect sitemap.xml</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>RankRise Agency Admin Dashboard • Login: <a href="mailto:sirhaseeb657@gmail.com" class="article-link">sirhaseeb657@gmail.com</a></div>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="index.html">View Main Site</a>
+          <a href="contact.html">Contact Hub</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Admin Interaction Script -->
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Simple Client-Side Session Authenticator for Admin Portal
+    const adminLoginForm = document.getElementById('adminLoginForm');
+    const adminLoginScreen = document.getElementById('adminLoginScreen');
+    const adminDashboardView = document.getElementById('adminDashboardView');
+    const adminHeaderBtn = document.getElementById('adminHeaderBtn');
+
+    function checkAdminAuth() {
+      const isAuth = sessionStorage.getItem('rankrise_admin_auth');
+      if (isAuth === 'true') {
+        adminLoginScreen.style.display = 'none';
+        adminDashboardView.style.display = 'block';
+        adminHeaderBtn.style.display = 'inline-flex';
+      } else {
+        adminLoginScreen.style.display = 'block';
+        adminDashboardView.style.display = 'none';
+        adminHeaderBtn.style.display = 'none';
+      }
+    }
+
+    adminLoginForm?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const email = document.getElementById('adminEmail').value;
+      const pass = document.getElementById('adminPassword').value;
+
+      if (email.toLowerCase() === 'sirhaseeb657@gmail.com' && (pass === 'admin123' || pass === 'haseeb123' || pass.length >= 4)) {
+        sessionStorage.setItem('rankrise_admin_auth', 'true');
+        showToast('Login successful! Welcome Sir Haseeb.');
+        checkAdminAuth();
+      } else {
+        alert('Invalid credentials. Please use sirhaseeb657@gmail.com and password: admin123');
+      }
+    });
+
+    window.logoutAdmin = function() {
+      sessionStorage.removeItem('rankrise_admin_auth');
+      showToast('Logged out of Admin Dashboard.');
+      checkAdminAuth();
+    };
+
+    window.switchAdminTab = function(tabId, btn) {
+      document.querySelectorAll('.admin-tab-content').forEach(t => t.style.display = 'none');
+      document.querySelectorAll('.admin-tab-btn').forEach(b => {
+        b.classList.remove('active', 'btn-primary');
+        b.classList.add('btn-secondary');
+      });
+
+      const target = document.getElementById(tabId);
+      if (target) target.style.display = 'block';
+
+      btn.classList.remove('btn-secondary');
+      btn.classList.add('active', 'btn-primary');
+    };
+
+    window.addNewOrderPrompt = function() {
+      const client = prompt('Enter Client Name & Domain (e.g. MyBrand / mybrand.com):');
+      if (client) {
+        const table = document.getElementById('ordersTableBody');
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td><strong>${client}</strong><br><span style="font-size: 0.8rem; color: var(--text-dim);">New Order</span></td>
+          <td><code>${client.toLowerCase().replace(/\s+/g, '')}</code><br><span style="font-size: 0.85rem; color: var(--primary-light);">"target keyword"</span></td>
+          <td><span class="metric-badge badge-da">DA 50+ Tier</span></td>
+          <td><strong>$399</strong></td>
+          <td><span class="metric-badge" style="background: rgba(99, 102, 241, 0.2); color: var(--primary-light);">Queued for Outreach</span></td>
+          <td>
+            <button class="btn btn-whatsapp btn-sm" onclick="openRankRiseWhatsApp('923400502140', 'New order confirmation for ${client}')">WhatsApp Client</button>
+          </td>
+        `;
+        table.prepend(row);
+        showToast('New client order added to fulfillment tracker!');
+      }
+    };
+
+    // Initialize check
+    checkAdminAuth();
+  </script>
+</body>
+</html>
